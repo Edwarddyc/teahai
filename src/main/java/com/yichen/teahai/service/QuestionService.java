@@ -3,6 +3,7 @@ package com.yichen.teahai.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.yichen.teahai.common.BaseResponse;
 import com.yichen.teahai.model.dto.question.QuestionQueryRequest;
 import com.yichen.teahai.model.entity.Question;
 import com.yichen.teahai.model.vo.QuestionVO;
@@ -50,4 +51,6 @@ public interface QuestionService extends IService<Question> {
      * @return
      */
     Page<QuestionVO> getQuestionVOPage(Page<Question> questionPage, HttpServletRequest request);
+
+    Page<Question> listQuestionByPage(QuestionQueryRequest questionQueryRequest);
 }
